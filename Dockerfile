@@ -23,16 +23,14 @@ ENV LC_CTYPE ja_JP.UTF-8
 ENV LANG ja_JP.UTF-8
 ENV LANGUAGE ja_JP.UTF-8
 
-RUN useradd -m -s /bin/bash chef && \
-    mkdir -p ${APP_DIR} && \
+RUN mkdir -p ${APP_DIR} && \
     mkdir -p ${GEMFILE_DIR} && \
-    chown chef:chef ${GEMFILE_DIR} $BUNDLE_APP_CONFIG ${APP_DIR}
+    mkdir -p /root/.ssh
 
 ADD Gemfile ${GEMFILE_DIR}/
 ADD Gemfile.lock ${GEMFILE_DIR}/
 
 WORKDIR ${GEMFILE_DIR}
-USER chef
 
 RUN set -x && \
     bundle install
