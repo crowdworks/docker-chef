@@ -10,7 +10,7 @@ fi
 if [[ -n $SSH_PRIVATE_KEY ]]; then
     echo -e $SSH_PRIVATE_KEY > ~/.ssh/id_rsa
     chmod 400 ~/.ssh/id_rsa
-    ssh-keyscan github.com > ~/.ssh/known_hosts
+    ssh-keyscan -t rsa -H github.com 1> ~/.ssh/known_hosts 2> /dev/null
     cat <<EOF > ~/.ssh/config
 Host github.com
   Port 22
