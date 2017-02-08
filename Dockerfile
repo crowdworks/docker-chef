@@ -10,7 +10,8 @@ RUN set -x && \
       locales task-japanese \
       git \
       ssh \
-      curl && \
+      curl \
+      jq && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
 # localeの設定
