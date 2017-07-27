@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
 gem 'test-kitchen'
-gem 'kitchen-ec2', git: 'git://github.com/crowdworks/kitchen-ec2.git', branch: 'fix-regression'
+gem 'kitchen-ec2'
 gem 'serverspec'
-gem 'chef'
+gem 'chef', '~> 13.2'
 gem 'knife-zero'
 gem 'berkshelf'
 gem 'aws-sdk'
