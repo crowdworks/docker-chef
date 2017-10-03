@@ -11,6 +11,7 @@ RUN set -x && \
       git \
       ssh \
       curl \
+      vim \
       jq && \
     rm -rf /var/cache/apt/archives/* /var/lib/apt/lists/*
 
